@@ -68,6 +68,24 @@ function render() {
     removeFirstValue();
 }
 
+function reset() {
+    todos[0] = "Wash the dishes";
+    todos[2] = "Mow the yard";
+    answerOneEl.innertText = "";
+    answerTwoEl.innerText = "";
+    answerFourEl.innerText = "";
+    answerFiveEl.innerText = "";
+    answerSixEl.innerText = "";
+    shiftValue = "";
+    popValue = "";
+}
+
 submissionBtn.addEventListener("click", function () {
-    render();
+    if (submissionBtn.innerText === "Submit") {
+        render();
+        submissionBtn.innerText = "Reset";      
+    } else {
+        reset();
+        submissionBtn.innerText = "Submit"; 
+    }
 });
